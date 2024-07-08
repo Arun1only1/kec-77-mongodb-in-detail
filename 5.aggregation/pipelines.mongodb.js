@@ -7,6 +7,9 @@ use("kec-crud");
 // ?$sort
 // ?$skip
 // ?$limit
+// ? $lookup
+// ? $unwind
+// TODO:$group
 
 // db.movies.aggregate([
 //   {
@@ -136,3 +139,28 @@ use("kec-crud");
 
 // ? find 5 movies whose rating is greater than 8 and
 // ? id is sorted in ascending order
+
+// let page = 2;
+// let limit = 5;
+// let skip = (page - 1) * limit;
+
+// db.movies.aggregate([
+//   {
+//     $match: {},
+//   },
+
+//   {
+//     $sort: {
+//       id: 1,
+//     },
+//   },
+//   { $skip: skip },
+//   { $limit: limit },
+//   {
+//     $project: {
+//       _id: 0,
+//       name: 1,
+//       id: 1,
+//     },
+//   },
+// ]);
